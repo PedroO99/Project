@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Registrarse
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="name" placeholder="Nombre Completo" type="text">
+        </div>
+      <!--  <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="second_name" placeholder="Segundo nombre" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="last_name" placeholder="Apellido" type="text">
+        </div> -->
+        <div class="mb-3">
+            <select class="form-control mx-auto w-auto" name="sexo" placeholder="Sexo" type="text">
+                <option disable selected> Sexo </option>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="email" placeholder="e-mail" type="email">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="password" placeholder="Contraseña" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="confirm_password" placeholder="Confirmar Constraseña" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Registrarse</button>
+    </form>
+
+{% endblock %}
