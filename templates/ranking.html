@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h2> Ranking </h2>
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                    <th> Número</th>
+                    <th> Nombre </th>
+                    <th> Puntos </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for l in range(0, lenght)%}
+                    <tr>
+                        <td> {{l + 1}}</td>
+                        <td> {{ names[l]['name']}} </td>
+                        <td> {{"{:.2f}".format(ranking[l]['ranking'])}} </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endblock %}
