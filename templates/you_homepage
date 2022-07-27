@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h2> Partidos jugados que vos desafiaste </h2>
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th> Rival </th>
+                <th> Ganador</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for l in range(0, length1)%}
+                <tr>
+                    <td> {{ rival1_name[l]['name']}} </td>
+                    <td> {{ winners1[l]['name']}} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{%endblock%}
