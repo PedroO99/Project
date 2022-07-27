@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h2> Resultados </h2>
+        <form action="/Resultados" method = "post">
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th> Desafiador </th>
+                        <th> Mes </th>
+                        <th> Día </th>
+                        <th> Ganador </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for l in range(0, a_length)%}
+                        <tr>
+                            <td> {{ a_name[l]['name']}} </td>
+                            <td> {{ a_month[l]['month']}} </td>
+                            <td> {{ a_day [l]['day']}} </td>
+                            <td>    <select name = "ganador" placeholder =  "Ganador"  type="text" >
+                                        <option disable selected> Ganador </option>
+                                        {% for n in range(0, a_length) %}
+                                            <option value = "{{ my_id }}"> {{ name }} </option>
+                                            <option value = "{{ a_id }}"> {{ a_name[n]['name']}} </option>
+                                        {% endfor %}
+                                    </select>
+                                    <button class="btn btn-primary" type="submit">Enviar</button>
+                            </td>
+                        </tr>
+                    {% endfor%}
+                </tbody>
+            </table>
+        </form>
+
+{%endblock%}
