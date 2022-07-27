@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Desafiar
+{% endblock %}
+
+{% block main %}
+    <h2> ¿A quién queres Desafiar? </h2>
+    <form action="/Desafiar" method="post">
+        <select name = "name" placeholder =  "Jugador a Desafiar"  type="text" >
+            <option disable selected> Nombre </option>
+            {% for n in range(0, name_len) %}
+                <option value = "{{ name[n]['name'] }} "> {{ name[n]['name'] }} </option>
+            {% endfor%}
+        </select>
+        <input type = "date" name = "date" Placeholder = "Dia">
+        <input type = "time" name = "hour" Placehodler = "Hora">
+        <button class="btn btn-primary" type="submit">Desafiar</button>
+    </form>
+
+{% endblock %}
