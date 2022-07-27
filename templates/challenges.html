@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h2> Nuevos Desafios </h2>
+        <form action="/Desafios" method = "post">
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th> Desafiador </th>
+                        <th> Mes </th>
+                        <th> Día </th>
+                        <th> Hora </th>
+                        <th> Respuesta </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for l in range(0, w_length)%}
+                        <tr>
+                            <td> {{ w_name[l]['name']}} </td>
+                            <td> {{ w_month [l]['month']}} </td>
+                            <td> {{ w_day [l]['day']}} </td>
+                            <td> {{ w_hour [l]['hour']}} </td>
+                            <td>    <select name = "answer" placeholder =  "Respuesta"  type="text" >
+                                        <option disable selected> Respuesta </option>
+                                        <option value = "Accept"> Aceptar </option>
+                                        <option value = "Cancel"> Rechazar </option>
+                                    </select>
+                                    <button class="btn btn-primary" type="submit">Enviar</button>
+                            </td>
+                        </tr>
+                    {% endfor%}
+                </tbody>
+            </table>
+        </form>
+
+{%endblock%}
